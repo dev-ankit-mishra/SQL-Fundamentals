@@ -1,0 +1,5 @@
+//Problem Link-https://leetcode.com/problems/find-products-with-valid-serial-numbers/description/?envType=problem-list-v2&envId=database
+
+SELECT * 
+FROM products
+WHERE description REGEXP '\\bSN[0-9]{4}-[0-9]{4}\\b';
