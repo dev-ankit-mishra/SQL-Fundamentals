@@ -1,9 +1,9 @@
 //Problem Link-https://leetcode.com/problems/employees-earning-more-than-their-managers/description/?envType=problem-list-v2&envId=database
 
 # Write your MySQL query statement below
-select name as Employee
-from Employee  e
-where e.salary>(
-    select salary
-    from employee
-    where e.managerId=id )
+Select name as Employee
+From Employee  e
+Where e.salary>(
+    Select salary
+    From employee
+    Where e.managerId=id )
