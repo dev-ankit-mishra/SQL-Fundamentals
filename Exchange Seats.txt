@@ -1,6 +1,6 @@
 //Problem Link-https://leetcode.com/problems/exchange-seats/description/
 
-select (
+Select (
     case
         when id%2!=0 and id+1 in (select id from Seat)
         then id+1
@@ -10,5 +10,5 @@ select (
         id
     end
 ) as id,student
-from Seat
-order by id
+From Seat
+Order by id
