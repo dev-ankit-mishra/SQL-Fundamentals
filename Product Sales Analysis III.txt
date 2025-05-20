@@ -1,11 +1,11 @@
 //Problem Link-https://leetcode.com/problems/product-sales-analysis-iii/description/
 
 # Write your MySQL query statement below
-select  product_id,year as first_year,quantity,price
-from (
-    select *,dense_rank() over (partition by product_id order by year asc) as rnk
-    from Sales
+Select  product_id,year as first_year,quantity,price
+From (
+    Select *,dense_rank() over (partition by product_id order by year asc) as rnk
+    From Sales
 ) as rnk_table
-where rnk=1;
+Where rnk=1;
 
 
