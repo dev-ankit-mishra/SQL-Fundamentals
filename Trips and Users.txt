@@ -1,17 +1,17 @@
 //Problem Link-https://leetcode.com/problems/trips-and-users/description/
 
-select 
+Select 
     request_at as "Day",
     round(
         (sum(case when status = "cancelled_by_driver" or status = "cancelled_by_client" then 1 else 0 end) / count(status)), 2
     ) as "Cancellation Rate"
-from
+From
     Trips
-where 
+Where 
     client_id not in (select users_id from Users where role = 'client' and banned ='Yes') 
-and 
+And 
     driver_id not in (select users_id from Users where role = 'driver' and banned ='Yes') 
-and 
+And 
     request_at >= "2013-10-01" and request_at <= "2013-10-03"
-group by 
+Group by 
     request_at
